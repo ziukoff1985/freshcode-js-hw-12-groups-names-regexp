@@ -14,16 +14,14 @@ const arrGroups = [
     'FM2022-1',
 ];
 
-const regExp = /^(FD|FM|FE|fd|fm|fe)20\d{2}(-\d+)?$/;
-
-function checkGroupsNames(array, regexp) {
+function checkGroupsNames(array) {
+    const regExp = /^(FD|FM|FE|fd|fm|fe)20\d{2}(-\d+)?$/;
     array.forEach((group) => {
-        if (!regexp.test(group)) {
-            console.log(`Error ${group}`);
-            return;
-        }
-        console.log(`Success: ${group}`);
+        const result = regExp.test(group)
+            ? `Success: ${group}`
+            : `Error: ${group}`;
+        console.log(result);
     });
 }
 
-checkGroupsNames(arrGroups, regExp);
+checkGroupsNames(arrGroups);
