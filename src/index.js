@@ -15,7 +15,7 @@ const arrGroups = [
 ];
 
 function checkGroupsNames(array) {
-    const regExp = /^(FD|FM|FE|fd|fm|fe)20\d{2}(-\d+)?$/;
+    const regExp = /^(F[D|M|E]|f[d|m|e])20\d{2}(-\d+)?$/;
     array.forEach((group) => {
         const result = regExp.test(group)
             ? `Success: ${group}`
